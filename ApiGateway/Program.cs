@@ -1,6 +1,17 @@
 ﻿using Intercore.shared.Response;
 
+
+
+
+
+
+
+
+
+
 var response = new ApiResponse<object>(); 
+
+
 
 
 

@@ -38,6 +38,22 @@
           }
         }
       },
+      "Confluent.Kafka/2.13.0": {
+        "type": "package",
+        "dependencies": {
+          "librdkafka.redist": "2.13.0"
+        },
+        "compile": {
+          "lib/net8.0/Confluent.Kafka.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Confluent.Kafka.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Intercore.shared/1.0.0": {
         "type": "package",
         "dependencies": {
@@ -48,6 +64,110 @@
         },
         "runtime": {
           "lib/net9.0/Intercore.shared.dll": {}
+        }
+      },
+      "librdkafka.redist/2.13.0": {
+        "type": "package",
+        "build": {
+          "build/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-arm64/native/librdkafka.so": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-x64/native/alpine-librdkafka.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/centos8-librdkafka.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/librdkafka.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx-arm64/native/librdkafka.dylib": {
+            "assetType": "native",
+            "rid": "osx-arm64"
+          },
+          "runtimes/osx-x64/native/librdkafka.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/win-x64/native/libcrypto-3-x64.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/libcurl.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/librdkafka.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/librdkafkacpp.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/libssl-3-x64.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/msvcp140.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/vcruntime140.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/zlib1.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/zstd.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/libcrypto-3.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/libcurl.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/librdkafka.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/librdkafkacpp.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/libssl-3.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/msvcp140.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/vcruntime140.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/zlib1.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/zstd.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
         }
       },
       "MassTransit/9.1.0-develop.60": {
@@ -83,6 +203,42 @@
             "related": ".xml"
           }
         }
+      },
+      "MassTransit.Kafka/9.1.0-develop.60": {
+        "type": "package",
+        "dependencies": {
+          "Confluent.Kafka": "2.13.0",
+          "MassTransit": "9.1.0-develop.60"
+        },
+        "compile": {
+          "lib/net9.0/MassTransit.KafkaIntegration.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/MassTransit.KafkaIntegration.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.OpenApi/9.0.8": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.OpenApi": "1.6.17"
+        },
+        "compile": {
+          "lib/net9.0/Microsoft.AspNetCore.OpenApi.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.AspNetCore.OpenApi.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "Microsoft.Bcl.AsyncInterfaces/8.0.0": {
         "type": "package",
@@ -561,6 +717,19 @@
           }
         }
       },
+      "Microsoft.OpenApi/1.6.17": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.OpenApi.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.OpenApi.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Microsoft.SqlServer.Server/1.0.0": {
         "type": "package",
         "compile": {
@@ -786,6 +955,27 @@
         "lib/netstandard2.0/Azure.Identity.xml"
       ]
     },
+    "Confluent.Kafka/2.13.0": {
+      "sha512": "QoQ0UT/XQXMjGYd337ungOq5XYITGh+S8Hjkj2tEiMsWrn1w0DvyXZgfFQyBPzlBWICBMiaBfnedIuSvss4oLQ==",
+      "type": "package",
+      "path": "confluent.kafka/2.13.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "confluent-logo.png",
+        "confluent.kafka.2.13.0.nupkg.sha512",
+        "confluent.kafka.nuspec",
+        "lib/net462/Confluent.Kafka.dll",
+        "lib/net462/Confluent.Kafka.xml",
+        "lib/net6.0/Confluent.Kafka.dll",
+        "lib/net6.0/Confluent.Kafka.xml",
+        "lib/net8.0/Confluent.Kafka.dll",
+        "lib/net8.0/Confluent.Kafka.xml",
+        "lib/netstandard2.0/Confluent.Kafka.dll",
+        "lib/netstandard2.0/Confluent.Kafka.xml"
+      ]
+    },
     "Intercore.shared/1.0.0": {
       "sha512": "F9/evITMA/tEX5/Jz2dFX/SsFSzn85ttMMVIaXCQ6uO4h2F4bCgKCh/kCY+M7/37hz3kJwwl4XCMVyPz2K09ZQ==",
       "type": "package",
@@ -795,6 +985,53 @@
         "intercore.shared.1.0.0.nupkg.sha512",
         "intercore.shared.nuspec",
         "lib/net9.0/Intercore.shared.dll"
+      ]
+    },
+    "librdkafka.redist/2.13.0": {
+      "sha512": "PCtGYOJvqDo+dqxRsBidc6OJGGSCIqmh0wIWgTQljuzaxeAM8uAheNwZ/6o60hueObJj1vPczNLLeoLEu1+Q3g==",
+      "type": "package",
+      "path": "librdkafka.redist/2.13.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CONFIGURATION.md",
+        "LICENSES.txt",
+        "README.md",
+        "build/librdkafka.redist.props",
+        "build/native/include/librdkafka/rdkafka.h",
+        "build/native/include/librdkafka/rdkafka_mock.h",
+        "build/native/include/librdkafka/rdkafkacpp.h",
+        "build/native/lib/win/x64/win-x64-Release/v142/librdkafka.lib",
+        "build/native/lib/win/x64/win-x64-Release/v142/librdkafkacpp.lib",
+        "build/native/lib/win/x86/win-x86-Release/v142/librdkafka.lib",
+        "build/native/lib/win/x86/win-x86-Release/v142/librdkafkacpp.lib",
+        "build/native/librdkafka.redist.targets",
+        "librdkafka.redist.2.13.0.nupkg.sha512",
+        "librdkafka.redist.nuspec",
+        "runtimes/linux-arm64/native/librdkafka.so",
+        "runtimes/linux-x64/native/alpine-librdkafka.so",
+        "runtimes/linux-x64/native/centos8-librdkafka.so",
+        "runtimes/linux-x64/native/librdkafka.so",
+        "runtimes/osx-arm64/native/librdkafka.dylib",
+        "runtimes/osx-x64/native/librdkafka.dylib",
+        "runtimes/win-x64/native/libcrypto-3-x64.dll",
+        "runtimes/win-x64/native/libcurl.dll",
+        "runtimes/win-x64/native/librdkafka.dll",
+        "runtimes/win-x64/native/librdkafkacpp.dll",
+        "runtimes/win-x64/native/libssl-3-x64.dll",
+        "runtimes/win-x64/native/msvcp140.dll",
+        "runtimes/win-x64/native/vcruntime140.dll",
+        "runtimes/win-x64/native/zlib1.dll",
+        "runtimes/win-x64/native/zstd.dll",
+        "runtimes/win-x86/native/libcrypto-3.dll",
+        "runtimes/win-x86/native/libcurl.dll",
+        "runtimes/win-x86/native/librdkafka.dll",
+        "runtimes/win-x86/native/librdkafkacpp.dll",
+        "runtimes/win-x86/native/libssl-3.dll",
+        "runtimes/win-x86/native/msvcp140.dll",
+        "runtimes/win-x86/native/vcruntime140.dll",
+        "runtimes/win-x86/native/zlib1.dll",
+        "runtimes/win-x86/native/zstd.dll"
       ]
     },
     "MassTransit/9.1.0-develop.60": {
@@ -841,6 +1078,45 @@
         "masstransit.abstractions.9.1.0-develop.60.nupkg.sha512",
         "masstransit.abstractions.nuspec",
         "mt-logo-small.png"
+      ]
+    },
+    "MassTransit.Kafka/9.1.0-develop.60": {
+      "sha512": "8jeDpouO3ZkF2mxO9zAa8qU+BO3j2uYBYJ8OxFBT35iK5FiFVGGP9J5nnY97l3K6xAxbChVT/MXKOlSX/bXBKA==",
+      "type": "package",
+      "path": "masstransit.kafka/9.1.0-develop.60",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "NuGet.README.md",
+        "lib/net10.0/MassTransit.KafkaIntegration.dll",
+        "lib/net10.0/MassTransit.KafkaIntegration.xml",
+        "lib/net472/MassTransit.KafkaIntegration.dll",
+        "lib/net472/MassTransit.KafkaIntegration.xml",
+        "lib/net8.0/MassTransit.KafkaIntegration.dll",
+        "lib/net8.0/MassTransit.KafkaIntegration.xml",
+        "lib/net9.0/MassTransit.KafkaIntegration.dll",
+        "lib/net9.0/MassTransit.KafkaIntegration.xml",
+        "lib/netstandard2.0/MassTransit.KafkaIntegration.dll",
+        "lib/netstandard2.0/MassTransit.KafkaIntegration.xml",
+        "masstransit.kafka.9.1.0-develop.60.nupkg.sha512",
+        "masstransit.kafka.nuspec",
+        "mt-logo-small.png"
+      ]
+    },
+    "Microsoft.AspNetCore.OpenApi/9.0.8": {
+      "sha512": "BwF9sQCKmvu93C/pmKxJjPhF5fFB23MEcgTsGL+7W3wKLYawS4lyFSL5/qh00IJzuADLf+1SmvxMaphbyZYqQQ==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.openapi/9.0.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net9.0/Microsoft.AspNetCore.OpenApi.dll",
+        "lib/net9.0/Microsoft.AspNetCore.OpenApi.xml",
+        "microsoft.aspnetcore.openapi.9.0.8.nupkg.sha512",
+        "microsoft.aspnetcore.openapi.nuspec"
       ]
     },
     "Microsoft.Bcl.AsyncInterfaces/8.0.0": {
@@ -1550,6 +1826,21 @@
         "microsoft.identitymodel.tokens.nuspec"
       ]
     },
+    "Microsoft.OpenApi/1.6.17": {
+      "sha512": "Le+kehlmrlQfuDFUt1zZ2dVwrhFQtKREdKBo+rexOwaCoYP0/qpgT9tLxCsZjsgR5Itk1UKPcbgO+FyaNid/bA==",
+      "type": "package",
+      "path": "microsoft.openapi/1.6.17",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/netstandard2.0/Microsoft.OpenApi.dll",
+        "lib/netstandard2.0/Microsoft.OpenApi.pdb",
+        "lib/netstandard2.0/Microsoft.OpenApi.xml",
+        "microsoft.openapi.1.6.17.nupkg.sha512",
+        "microsoft.openapi.nuspec"
+      ]
+    },
     "Microsoft.SqlServer.Server/1.0.0": {
       "sha512": "N4KeF3cpcm1PUHym1RmakkzfkEv3GRMyofVv40uXsQhCQeglr2OHNcUk2WOG51AKpGO8ynGpo9M/kFXSzghwug==",
       "type": "package",
@@ -1826,7 +2117,9 @@
   "projectFileDependencyGroups": {
     "net9.0": [
       "Intercore.shared >= 1.0.0",
-      "MassTransit >= 9.1.0-develop.60"
+      "MassTransit >= 9.1.0-develop.60",
+      "MassTransit.Kafka >= 9.1.0-develop.60",
+      "Microsoft.AspNetCore.OpenApi >= 9.0.8"
     ]
   },
   "packageFolders": {
@@ -1835,11 +2128,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ingcampoverde/RiderProjects/ApiGateway/ApiGateway/ApiGateway.csproj",
-      "projectName": "ApiGateway",
-      "projectPath": "/Users/ingcampoverde/RiderProjects/ApiGateway/ApiGateway/ApiGateway.csproj",
+      "projectUniqueName": "/Users/ingcampoverde/RiderProjects/ApiGateway/Intercore.ApiGateway.Api/Intercore.ApiGateway.Api.csproj",
+      "projectName": "Intercore.ApiGateway.Api",
+      "projectPath": "/Users/ingcampoverde/RiderProjects/ApiGateway/Intercore.ApiGateway.Api/Intercore.ApiGateway.Api.csproj",
       "packagesPath": "/Users/ingcampoverde/.nuget/packages/",
-      "outputPath": "/Users/ingcampoverde/RiderProjects/ApiGateway/ApiGateway/obj/",
+      "outputPath": "/Users/ingcampoverde/RiderProjects/ApiGateway/Intercore.ApiGateway.Api/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/ingcampoverde/.nuget/NuGet/NuGet.Config"
@@ -1880,6 +2173,14 @@
           "MassTransit": {
             "target": "Package",
             "version": "[9.1.0-develop.60, )"
+          },
+          "MassTransit.Kafka": {
+            "target": "Package",
+            "version": "[9.1.0-develop.60, )"
+          },
+          "Microsoft.AspNetCore.OpenApi": {
+            "target": "Package",
+            "version": "[9.0.8, )"
           }
         },
         "imports": [
@@ -1894,6 +2195,9 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
