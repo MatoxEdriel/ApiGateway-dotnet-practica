@@ -1,21 +1,39 @@
 
 
 
-using Intercore.shared;
+using Intercore.shared.Constans.KAFKA.topics;
+using Intercore.shared.DTOs.Auth;
 using MassTransit;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddControllers();
+
 
 builder.Services.AddMassTransit(x =>
-{   
-    x.UsingKafka((context, cfg) => 
-    {
-        cfg.Host("localhost:9092");
-    });
-    
-    
+{
+   x.UsingInMemory((context, cfg) =>
+   {
+        cfg.ConfigureEndpoints(context);
+       
+   });
+   
+   x.AddRider(rider =>
+   {
+       
+       //Aqui traje un topic 
+       rider.AddProducer<LoginMessages.LoginRequest>(AuthTopics.LoginRequest);       
+       rider.AddProducer<RegisterMessages.RegisterRequest>(AuthTopics.RegisterUserCommand);
+       
+       
+       
+       
+       rider.UsingKafka((context, k) =>
+       {
+           k.Host("localhost:9092");
+       });
+   });
 });
 
 builder.Services.AddOpenApi();
@@ -29,28 +47,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
 
-app.MapGet("/weatherforecast", () =>
-    {
-        var forecast = Enumerable.Range(1, 5).Select(index =>
-                new WeatherForecast
-                (
-                    DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                    Random.Shared.Next(-20, 55),
-                    summaries[Random.Shared.Next(summaries.Length)]
-                ))
-            .ToArray();
-        return forecast;
-    })
-    .WithName("GetWeatherForecast");
 
+app.MapControllers();
 app.Run();
 
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
