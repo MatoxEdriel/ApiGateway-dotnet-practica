@@ -108,3 +108,4 @@
 /Users/ingcampoverde/RiderProjects/ApiGateway/Intercore.ApiGateway.Api/obj/Debug/net9.0/Intercore.ApiGateway.Api.pdb
 /Users/ingcampoverde/RiderProjects/ApiGateway/Intercore.ApiGateway.Api/obj/Debug/net9.0/Intercore.ApiGateway.Api.genruntimeconfig.cache
 /Users/ingcampoverde/RiderProjects/ApiGateway/Intercore.ApiGateway.Api/obj/Debug/net9.0/ref/Intercore.ApiGateway.Api.dll
+/Users/ingcampoverde/RiderProjects/ApiGateway/Intercore.ApiGateway.Api/bin/Debug/net9.0/Intercore.shared.pdb

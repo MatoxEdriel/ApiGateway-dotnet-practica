@@ -9,8 +9,8 @@
       "Intercore.ApiGateway.Api/1.0.0": {
         "dependencies": {
           "Intercore.shared": "1.0.0",
-          "MassTransit": "9.1.0-develop.60",
-          "MassTransit.Kafka": "9.1.0-develop.60",
+          "MassTransit": "9.0.1",
+          "MassTransit.Kafka": "9.0.1",
           "Microsoft.AspNetCore.OpenApi": "9.0.8"
         },
         "runtime": {
@@ -51,17 +51,6 @@
           "lib/net8.0/Confluent.Kafka.dll": {
             "assemblyVersion": "2.13.0.0",
             "fileVersion": "2.13.0.0"
-          }
-        }
-      },
-      "Intercore.shared/1.0.0": {
-        "dependencies": {
-          "Microsoft.Data.SqlClient": "7.0.0-preview3.25342.7"
-        },
-        "runtime": {
-          "lib/net9.0/Intercore.shared.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -189,9 +178,9 @@
           }
         }
       },
-      "MassTransit/9.1.0-develop.60": {
+      "MassTransit/9.0.1": {
         "dependencies": {
-          "MassTransit.Abstractions": "9.1.0-develop.60",
+          "MassTransit.Abstractions": "9.0.1",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.9",
           "Microsoft.Extensions.Diagnostics.HealthChecks": "9.0.0",
           "Microsoft.Extensions.Hosting.Abstractions": "9.0.0",
@@ -200,28 +189,28 @@
         },
         "runtime": {
           "lib/net9.0/MassTransit.dll": {
-            "assemblyVersion": "9.1.0.0",
-            "fileVersion": "9.1.0.0"
+            "assemblyVersion": "9.0.1.0",
+            "fileVersion": "9.0.1.0"
           }
         }
       },
-      "MassTransit.Abstractions/9.1.0-develop.60": {
+      "MassTransit.Abstractions/9.0.1": {
         "runtime": {
           "lib/net9.0/MassTransit.Abstractions.dll": {
-            "assemblyVersion": "9.1.0.0",
-            "fileVersion": "9.1.0.0"
+            "assemblyVersion": "9.0.1.0",
+            "fileVersion": "9.0.1.0"
           }
         }
       },
-      "MassTransit.Kafka/9.1.0-develop.60": {
+      "MassTransit.Kafka/9.0.1": {
         "dependencies": {
           "Confluent.Kafka": "2.13.0",
-          "MassTransit": "9.1.0-develop.60"
+          "MassTransit": "9.0.1"
         },
         "runtime": {
           "lib/net9.0/MassTransit.KafkaIntegration.dll": {
-            "assemblyVersion": "9.1.0.0",
-            "fileVersion": "9.1.0.0"
+            "assemblyVersion": "9.0.1.0",
+            "fileVersion": "9.0.1.0"
           }
         }
       },
@@ -645,6 +634,17 @@
             "fileVersion": "9.0.925.41916"
           }
         }
+      },
+      "Intercore.shared/1.0.0": {
+        "dependencies": {
+          "Microsoft.Data.SqlClient": "7.0.0-preview3.25342.7"
+        },
+        "runtime": {
+          "Intercore.shared.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -675,13 +675,6 @@
       "path": "confluent.kafka/2.13.0",
       "hashPath": "confluent.kafka.2.13.0.nupkg.sha512"
     },
-    "Intercore.shared/1.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-F9/evITMA/tEX5/Jz2dFX/SsFSzn85ttMMVIaXCQ6uO4h2F4bCgKCh/kCY+M7/37hz3kJwwl4XCMVyPz2K09ZQ==",
-      "path": "intercore.shared/1.0.0",
-      "hashPath": "intercore.shared.1.0.0.nupkg.sha512"
-    },
     "librdkafka.redist/2.13.0": {
       "type": "package",
       "serviceable": true,
@@ -689,26 +682,26 @@
       "path": "librdkafka.redist/2.13.0",
       "hashPath": "librdkafka.redist.2.13.0.nupkg.sha512"
     },
-    "MassTransit/9.1.0-develop.60": {
+    "MassTransit/9.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Oqw2JOp85FHwbG28T7C9BUrOnYGRxA1PsW4IJPdc/MYbOoGsusa1SQisBXMvX60Ndsty6PiWteLbnQKp2BhPHw==",
-      "path": "masstransit/9.1.0-develop.60",
-      "hashPath": "masstransit.9.1.0-develop.60.nupkg.sha512"
+      "sha512": "sha512-wYMV/TX9AQqG9ybG7i97Et2rjPgIYXmYr3RV5k7ogr/BvPnAF8ohcmeESoTYSgQFWDi2lurKx57uPg1MJ9R0jw==",
+      "path": "masstransit/9.0.1",
+      "hashPath": "masstransit.9.0.1.nupkg.sha512"
     },
-    "MassTransit.Abstractions/9.1.0-develop.60": {
+    "MassTransit.Abstractions/9.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-/hZJA5Lg/z5d/4SmHJgByI+oWfgrnMJ/gi9p4m5a8VsTmdv2IhLQORAAHlAqBUFOCf0tUCvAUVE+U4A1RFpSHg==",
-      "path": "masstransit.abstractions/9.1.0-develop.60",
-      "hashPath": "masstransit.abstractions.9.1.0-develop.60.nupkg.sha512"
+      "sha512": "sha512-Rh3Bj/8VOdaUat2Zepbe1cfqQ+20Pqd9zoUme8w50qXISZ9p6yuxBXNNBazS16TN6Kfd4FLxuMUtjY928Rxqdw==",
+      "path": "masstransit.abstractions/9.0.1",
+      "hashPath": "masstransit.abstractions.9.0.1.nupkg.sha512"
     },
-    "MassTransit.Kafka/9.1.0-develop.60": {
+    "MassTransit.Kafka/9.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-8jeDpouO3ZkF2mxO9zAa8qU+BO3j2uYBYJ8OxFBT35iK5FiFVGGP9J5nnY97l3K6xAxbChVT/MXKOlSX/bXBKA==",
-      "path": "masstransit.kafka/9.1.0-develop.60",
-      "hashPath": "masstransit.kafka.9.1.0-develop.60.nupkg.sha512"
+      "sha512": "sha512-qNZ0QlLdqJqeSLi9H1lIn0xdex+bSHWPloLgBKF2ia+JqKBih+f03lPHDnu6+ypOYp+qWKl0A178XD4TiHgNtA==",
+      "path": "masstransit.kafka/9.0.1",
+      "hashPath": "masstransit.kafka.9.0.1.nupkg.sha512"
     },
     "Microsoft.AspNetCore.OpenApi/9.0.8": {
       "type": "package",
@@ -961,6 +954,11 @@
       "sha512": "sha512-XN37933FTzEkqGJoOTunvnvzAv/4VO/9wQ0QwsGcrR5KyQpYT0z4Ssm+f+fpY9bea6srypFp3JjNPHHC26xzLw==",
       "path": "system.security.cryptography.protecteddata/9.0.9",
       "hashPath": "system.security.cryptography.protecteddata.9.0.9.nupkg.sha512"
+    },
+    "Intercore.shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

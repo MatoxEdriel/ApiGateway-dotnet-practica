@@ -54,18 +54,6 @@
           }
         }
       },
-      "Intercore.shared/1.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Data.SqlClient": "7.0.0-preview3.25342.7"
-        },
-        "compile": {
-          "lib/net9.0/Intercore.shared.dll": {}
-        },
-        "runtime": {
-          "lib/net9.0/Intercore.shared.dll": {}
-        }
-      },
       "librdkafka.redist/2.13.0": {
         "type": "package",
         "build": {
@@ -911,6 +899,19 @@
         "build": {
           "buildTransitive/net8.0/_._": {}
         }
+      },
+      "Intercore.shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Microsoft.Data.SqlClient": "7.0.0-preview3.25342.7"
+        },
+        "compile": {
+          "bin/placeholder/Intercore.shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Intercore.shared.dll": {}
+        }
       }
     }
   },
@@ -974,17 +975,6 @@
         "lib/net8.0/Confluent.Kafka.xml",
         "lib/netstandard2.0/Confluent.Kafka.dll",
         "lib/netstandard2.0/Confluent.Kafka.xml"
-      ]
-    },
-    "Intercore.shared/1.0.0": {
-      "sha512": "F9/evITMA/tEX5/Jz2dFX/SsFSzn85ttMMVIaXCQ6uO4h2F4bCgKCh/kCY+M7/37hz3kJwwl4XCMVyPz2K09ZQ==",
-      "type": "package",
-      "path": "intercore.shared/1.0.0",
-      "files": [
-        ".nupkg.metadata",
-        "intercore.shared.1.0.0.nupkg.sha512",
-        "intercore.shared.nuspec",
-        "lib/net9.0/Intercore.shared.dll"
       ]
     },
     "librdkafka.redist/2.13.0": {
@@ -2112,6 +2102,11 @@
         "system.security.cryptography.protecteddata.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "Intercore.shared/1.0.0": {
+      "type": "project",
+      "path": "../Intercore.shared/Intercore.shared/Intercore.shared.csproj",
+      "msbuildProject": "../Intercore.shared/Intercore.shared/Intercore.shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2147,7 +2142,11 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/ingcampoverde/RiderProjects/ApiGateway/Intercore.shared/Intercore.shared/Intercore.shared.csproj": {
+              "projectPath": "/Users/ingcampoverde/RiderProjects/ApiGateway/Intercore.shared/Intercore.shared/Intercore.shared.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -2166,10 +2165,6 @@
       "net9.0": {
         "targetAlias": "net9.0",
         "dependencies": {
-          "Intercore.shared": {
-            "target": "Package",
-            "version": "[1.0.0, )"
-          },
           "MassTransit": {
             "target": "Package",
             "version": "[9.0.1, )"

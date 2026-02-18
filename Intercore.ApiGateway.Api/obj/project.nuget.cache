@@ -1,13 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "MgiPuAKofxY=",
+  "dgSpecHash": "Oa3O5e3J8Tw=",
   "success": true,
   "projectFilePath": "/Users/ingcampoverde/RiderProjects/ApiGateway/Intercore.ApiGateway.Api/Intercore.ApiGateway.Api.csproj",
   "expectedPackageFiles": [
     "/Users/ingcampoverde/.nuget/packages/azure.core/1.49.0/azure.core.1.49.0.nupkg.sha512",
     "/Users/ingcampoverde/.nuget/packages/azure.identity/1.16.0/azure.identity.1.16.0.nupkg.sha512",
     "/Users/ingcampoverde/.nuget/packages/confluent.kafka/2.13.0/confluent.kafka.2.13.0.nupkg.sha512",
-    "/Users/ingcampoverde/.nuget/packages/intercore.shared/1.0.0/intercore.shared.1.0.0.nupkg.sha512",
     "/Users/ingcampoverde/.nuget/packages/librdkafka.redist/2.13.0/librdkafka.redist.2.13.0.nupkg.sha512",
     "/Users/ingcampoverde/.nuget/packages/masstransit/9.0.1/masstransit.9.0.1.nupkg.sha512",
     "/Users/ingcampoverde/.nuget/packages/masstransit.abstractions/9.0.1/masstransit.abstractions.9.0.1.nupkg.sha512",
@@ -47,7 +46,8 @@
     "/Users/ingcampoverde/.nuget/packages/system.memory.data/8.0.1/system.memory.data.8.0.1.nupkg.sha512",
     "/Users/ingcampoverde/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "/Users/ingcampoverde/.nuget/packages/system.security.cryptography.pkcs/9.0.9/system.security.cryptography.pkcs.9.0.9.nupkg.sha512",
-    "/Users/ingcampoverde/.nuget/packages/system.security.cryptography.protecteddata/9.0.9/system.security.cryptography.protecteddata.9.0.9.nupkg.sha512"
+    "/Users/ingcampoverde/.nuget/packages/system.security.cryptography.protecteddata/9.0.9/system.security.cryptography.protecteddata.9.0.9.nupkg.sha512",
+    "/Users/ingcampoverde/.nuget/packages/intercore.shared/1.0.0/intercore.shared.1.0.0.nupkg.sha512"
   ],
   "logs": []
 }
