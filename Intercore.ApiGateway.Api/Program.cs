@@ -2,7 +2,10 @@
 
 
 using Intercore.shared.Constans.KAFKA.topics;
+using Intercore.shared.CONSTANS.KAFKA.topics;
 using Intercore.shared.DTOs.Auth;
+
+
 
 using MassTransit;
 
@@ -26,6 +29,7 @@ builder.Services.AddMassTransit(x =>
        //Aqui traje un topic 
        rider.AddProducer<LoginMessages.LoginRequest>(AuthTopics.LoginRequest);       
        rider.AddProducer<RegisterMessages.RegisterRequest>(AuthTopics.RegisterUserCommand);
+       
        
        
        
