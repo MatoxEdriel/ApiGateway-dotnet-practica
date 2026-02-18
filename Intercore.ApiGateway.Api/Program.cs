@@ -4,9 +4,7 @@
 using Intercore.shared.Constans.KAFKA.topics;
 using Intercore.shared.CONSTANS.KAFKA.topics;
 using Intercore.shared.DTOs.Auth;
-
-
-
+using Intercore.shared.DTOs.Core;
 using MassTransit;
 
 
@@ -30,6 +28,9 @@ builder.Services.AddMassTransit(x =>
        rider.AddProducer<LoginMessages.LoginRequest>(AuthTopics.LoginRequest);       
        rider.AddProducer<RegisterMessages.RegisterRequest>(AuthTopics.RegisterUserCommand);
        
+       
+       //Mejoramiento 
+       rider.AddProducer<EmisorMessages.EmisorRequest>(CoreTopics.Commands.CreateEmisor);
        
        
        
