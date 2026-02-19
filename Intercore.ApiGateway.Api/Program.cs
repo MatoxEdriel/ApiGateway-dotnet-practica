@@ -12,6 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
+var kafkaHost = builder.Configuration["KafkaConfig:Host"] ?? "localhost:9092";
 
 builder.Services.AddMassTransit(x =>
 {
@@ -20,6 +21,7 @@ builder.Services.AddMassTransit(x =>
         cfg.ConfigureEndpoints(context);
        
    });
+   
    
    x.AddRider(rider =>
    {
@@ -37,13 +39,14 @@ builder.Services.AddMassTransit(x =>
        
        rider.UsingKafka((context, k) =>
        {
-           k.Host("localhost:9092");
+           k.Host(kafkaHost);
        });
    });
 });
 
 builder.Services.AddOpenApi();
 
+//Declaramos el host  de kafka 
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
