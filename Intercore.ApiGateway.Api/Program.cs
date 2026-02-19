@@ -2,7 +2,6 @@
 
 
 using Intercore.shared.Constans.KAFKA.topics;
-using Intercore.shared.CONSTANS.KAFKA.topics;
 using Intercore.shared.DTOs.Auth;
 using Intercore.shared.DTOs.Core;
 using MassTransit;
@@ -12,13 +11,15 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
+builder.Services.AddOpenApi();
+
 var kafkaHost = builder.Configuration["KafkaConfig:Host"] ?? "localhost:9092";
 
 builder.Services.AddMassTransit(x =>
 {
    x.UsingInMemory((context, cfg) =>
    {
-        cfg.ConfigureEndpoints(context);
+      
        
    });
    
@@ -32,7 +33,7 @@ builder.Services.AddMassTransit(x =>
        
        
        //Mejoramiento 
-       rider.AddProducer<EmisorMessages.EmisorRequest>(CoreTopics.Commands.CreateEmisor);
+      // rider.AddProducer<EmisorMessages.EmisorRequest>(.Commands.CreateEmisor);
        
        
        
@@ -44,7 +45,7 @@ builder.Services.AddMassTransit(x =>
    });
 });
 
-builder.Services.AddOpenApi();
+
 
 //Declaramos el host  de kafka 
 var app = builder.Build();
