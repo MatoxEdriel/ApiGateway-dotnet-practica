@@ -13,6 +13,10 @@ builder.Services.AddControllers();
 
 builder.Services.AddOpenApi();
 
+builder.Services.AddHealthChecks();
+
+
+
 var kafkaHost = builder.Configuration["KafkaConfig:Host"] ?? "localhost:9092";
 
 builder.Services.AddMassTransit(x =>
@@ -50,15 +54,14 @@ builder.Services.AddMassTransit(x =>
 //Declaramos el host  de kafka 
 var app = builder.Build();
 
+app.MapHealthChecks("/health");
+
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
 
 app.UseHttpsRedirection();
-
-
-
 app.MapControllers();
 app.Run();
 
