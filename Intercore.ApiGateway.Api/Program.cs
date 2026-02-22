@@ -34,7 +34,7 @@ builder.Services.AddMassTransit(x =>
        //Aqui traje un topic 
        rider.AddProducer<LoginMessages.LoginRequest>(AuthTopics.LoginRequest);       
        rider.AddProducer<RegisterMessages.RegisterRequest>(AuthTopics.RegisterUserCommand);
-       
+       rider.AddProducer<RecoveryMessages.RecoverPasswordRequest>(AuthTopics.RecoverPasswordCommand);
        
        //Mejoramiento 
       // rider.AddProducer<EmisorMessages.EmisorRequest>(.Commands.CreateEmisor);
@@ -61,7 +61,7 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
-app.UseHttpsRedirection();
+
 app.MapControllers();
 app.Run();
 

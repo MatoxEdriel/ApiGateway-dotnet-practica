@@ -10,12 +10,31 @@ namespace Intercore.ApiGateway.Api.Controller;
 public class AuthController: ControllerBase
 {
     private readonly ITopicProducer<RegisterMessages.RegisterRequest> _producer;
+    private readonly ITopicProducer<RecoveryMessages.RecoverPasswordRequest> _recoveryProducer;
 
-    public AuthController(ITopicProducer<RegisterMessages.RegisterRequest> producer)
+    public AuthController(
+        ITopicProducer<RegisterMessages.RegisterRequest> producer,
+        ITopicProducer<RecoveryMessages.RecoverPasswordRequest> recoveryProducer)
     {
         _producer = producer;
+        _recoveryProducer = recoveryProducer;
     }
 
+    [HttpPost("recuperar-password")]
+    public async Task<IActionResult> RecuperarPassword([FromBody] RecoveryMessages.RecoverPasswordRequest request)
+    {
+        await _recoveryProducer.Produce(request);
+
+        return Ok(new
+        {
+            Mensaje = "Si el correo existe chato",
+            Email = request.Email
+            
+        });
+
+    }
+
+    
     [HttpPost("registrar")]
     public async Task<IActionResult> RegistrarUsuario([FromBody] RegisterMessages.RegisterRequest request)
     {
@@ -28,6 +47,9 @@ public class AuthController: ControllerBase
             EmailEnviado = request.Email 
         });
     }
-    
-    
+
+
+
+
+
 }
