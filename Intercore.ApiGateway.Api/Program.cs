@@ -1,9 +1,8 @@
 
 
 
-using Intercore.shared.Constans.KAFKA.topics;
-using Intercore.shared.DTOs.Auth;
-using Intercore.shared.DTOs.Core;
+using Intercore.ApiGateway.Api.Extensions;
+
 using MassTransit;
 
 
@@ -31,17 +30,10 @@ builder.Services.AddMassTransit(x =>
    x.AddRider(rider =>
    {
        
-       //Aqui traje un topic 
-       rider.AddProducer<LoginMessages.LoginRequest>(AuthTopics.LoginRequest);       
-       rider.AddProducer<RegisterMessages.RegisterRequest>(AuthTopics.RegisterUserCommand);
-       rider.AddProducer<RecoveryMessages.RecoverPasswordRequest>(AuthTopics.RecoverPasswordCommand);
-       
+    rider.AddGatewayProducers();
        //Mejoramiento 
       // rider.AddProducer<EmisorMessages.EmisorRequest>(.Commands.CreateEmisor);
-       
-       
-       
-       
+      
        rider.UsingKafka((context, k) =>
        {
            k.Host(kafkaHost);

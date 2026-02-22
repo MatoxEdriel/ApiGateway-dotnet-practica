@@ -27,7 +27,7 @@ public class AuthController: ControllerBase
 
         return Ok(new
         {
-            Mensaje = "Si el correo existe chato",
+            Mensaje = "Si el correoh existe chato",
             Email = request.Email
             
         });

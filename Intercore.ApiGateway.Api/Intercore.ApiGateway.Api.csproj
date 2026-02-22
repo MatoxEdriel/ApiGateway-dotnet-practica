@@ -23,4 +23,8 @@
       <ProjectReference Include="..\Intercore.shared\Intercore.shared\Intercore.shared.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Controllers\Core\" />
+    </ItemGroup>
+
 </Project>
