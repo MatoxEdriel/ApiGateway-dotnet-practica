@@ -1,45 +1,41 @@
 using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
+using RabbitMQ.Client;
 
 namespace Intercore.ApiGateway.Api.Controllers;
 
-public class TestRequestDto 
+public class ProductDto 
 {
     
-    public string Action { get; set; }
-    public string data { get; set; }
+    public string Name { get; set; }
+    public string Price { get; set; }
 }
 
 [ApiController]
 [Route("api/[controller]")]
-public class TestController:ControllerBase
+public class TestController : ControllerBase
 {
-    
-    //FromBody 
-    [HttpPost("test-tcp")]
-    public async Task<IActionResult> TestTcp(
-        [FromBody] TestRequestDto request)
-    {
-        //dse deberia convertir siempre esto ? 
-        var jsonString = JsonSerializer.Serialize(request);
 
+    [HttpPost("product")]
+    public async Task<IActionResult> Create([FromBody] ProductDto request)
+    {
         try
         {
+
+            var factory = new ConnectionFactory()
+            {
+
+                HostName = "localhost",
+            };
+
+
 
         }
         catch (Exception e)
         {
-            Console.WriteLine(e);
-            throw;
+
         }
         
-
-
-
     }
-
-
-
-
-
+    
 }
