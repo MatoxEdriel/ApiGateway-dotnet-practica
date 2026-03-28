@@ -2,6 +2,8 @@ namespace Domain.Settings;
 
 public interface IRabbitMqService
 {
-    Task SendMessage(string message);
+    Task SendMessageAsync<T>(T message, string queueName);
+    
+    Task InitializeAsync();
     
 }
