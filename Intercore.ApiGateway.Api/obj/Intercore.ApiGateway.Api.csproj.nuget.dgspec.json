@@ -21,6 +21,7 @@
         ],
         "sources": {
           "/Users/ingcampoverde/LocalNuget": {},
+          "http://localhost:5555/v3/index.json": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -110,6 +111,7 @@
         ],
         "sources": {
           "/Users/ingcampoverde/LocalNuget": {},
+          "http://localhost:5555/v3/index.json": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

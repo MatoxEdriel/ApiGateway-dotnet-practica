@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "nr79R9lCJI0=",
+  "dgSpecHash": "zM+iSIj6LcI=",
   "success": true,
   "projectFilePath": "/Users/ingcampoverde/RiderProjects/ApiGateway/Intercore.ApiGateway.Api/Intercore.ApiGateway.Api.csproj",
   "expectedPackageFiles": [
@@ -56,5 +56,15 @@
     "/Users/ingcampoverde/.nuget/packages/system.threading.channels/8.0.0/system.threading.channels.8.0.0.nupkg.sha512",
     "/Users/ingcampoverde/.nuget/packages/yarp.reverseproxy/2.3.0/yarp.reverseproxy.2.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source http://localhost:5555/v3/index.json.",
+      "projectPath": "/Users/ingcampoverde/RiderProjects/ApiGateway/Intercore.ApiGateway.Api/Intercore.ApiGateway.Api.csproj",
+      "warningLevel": 1,
+      "filePath": "/Users/ingcampoverde/RiderProjects/ApiGateway/Intercore.ApiGateway.Api/Intercore.ApiGateway.Api.csproj",
+      "targetGraphs": []
+    }
+  ]
 }
