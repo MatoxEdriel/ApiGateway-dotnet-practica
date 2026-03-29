@@ -25,15 +25,22 @@ public class TestController : ControllerBase
         _rabbitMqService = rabbitMqService;
     }
 
-    [HttpPost("product")]
+    [HttpPost]
     public async Task<IActionResult> create([FromBody] ProductDto dto)
     {
         await _rabbitMqService.SendMessageAsync(
             message:dto,
-            routingKey: RabbitMqConstants.AuthCreated
+            routingKey: RabbitMqConstants.ProductCreated
             );
 
-        return Ok("Usuario encolado para creación.");
+        return Accepted(
+            new
+            {
+                
+                Message = "Producto recibido y encolado para su creación.",
+                State = "Procesando"
+                
+            });
     }
 
 

@@ -9,6 +9,8 @@ public static class RabbitMqConstants
     
     //routing key
     public const string AuthCreated = "auth.created";
+    
+    public const string ProductCreated = "product.created";
 
 
 }
