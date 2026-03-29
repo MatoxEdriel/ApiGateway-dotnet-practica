@@ -1,4 +1,6 @@
 using System.Text.Json;
+using Domain.Settings;
+using Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using RabbitMQ.Client;
 
@@ -15,27 +17,26 @@ public class ProductDto
 [Route("api/[controller]")]
 public class TestController : ControllerBase
 {
+    private readonly IRabbitMqService _rabbitMqService;
+
+    
+    public TestController(IRabbitMqService rabbitMqService)
+    {
+        _rabbitMqService = rabbitMqService;
+    }
 
     [HttpPost("product")]
-    public async Task<IActionResult> Create([FromBody] ProductDto request)
+    public async Task<IActionResult> create([FromBody] ProductDto dto)
     {
-        try
-        {
+        await _rabbitMqService.SendMessageAsync(
+            message:dto,
+            routingKey: RabbitMqConstants.AuthCreated
+            );
 
-            var factory = new ConnectionFactory()
-            {
-
-                HostName = "localhost",
-            };
-
-
-
-        }
-        catch (Exception e)
-        {
-
-        }
-        
+        return Ok("Usuario encolado para creación.");
     }
-    
+
+
+
+
 }

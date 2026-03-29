@@ -5,7 +5,7 @@ using RabbitMQ.Client;
 
 namespace Infrastructure.Settings;
 
-public class RabbitMqService: IRabbitMqService
+public class RabbitMqService: IRabbitMqService,IAsyncDisposable
 {
     
     private IConnection _connection;
@@ -20,28 +20,31 @@ public class RabbitMqService: IRabbitMqService
 
             HostName = "localhost"
         };
-
+        
         _connection = await factory.CreateConnectionAsync();
+        _channel = await _connection.CreateChannelAsync();
+
+
+        await _channel.ExchangeDeclareAsync(
+            exchange: RabbitMqConstants.ExchangeName,
+            type: ExchangeType.Direct,
+            durable:true
+        );
+
+
 
     }
 
-    public async Task SendMessageAsync<T>(T message, string queueName)
+    public async Task SendMessageAsync<T>(T message, string routingKey)
     {
-        await _channel.QueueDeclareAsync(
-            queue: queueName,
-            durable: false,
-            exclusive: false,
-            autoDelete: false,
-            arguments: null);
-        
         var jsonString = JsonSerializer.Serialize(message);
         var body = Encoding.UTF8.GetBytes(jsonString);
         
         await _channel.BasicPublishAsync(
-            //definir que tipo de exchange usar mas tarde xd 
-            exchange: string.Empty, 
-            routingKey: queueName,  // 
-            body: body);
+            exchange:RabbitMqConstants.ExchangeName,
+            routingKey:routingKey,
+            body:body
+        );
     }
     
     public async ValueTask DisposeAsync()
